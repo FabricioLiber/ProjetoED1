@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "fila.h"
 
-void () {
+void main () {
 	//TODO
 }
