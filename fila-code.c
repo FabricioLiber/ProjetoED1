@@ -62,16 +62,9 @@ void imprimirFila (tfila F) {
 
   if (!vaziaFila(F)) {
     while ((F.inicio)->prox != NULL) {
-      printf("Cliente:");
-      printf("%d(",(F.inicio)->id);
-      printf("%d,",(F.inicio)->entrada);
-      printf("%d) - ",(F.inicio)->atendimento);
+      printf("Cliente:%d(PA:%d) - ",(F.inicio)->id,(F.inicio)->atendimento);
       F.inicio = (F.inicio)->prox;
     }
-    printf("Cliente:");
-    printf("%d(",(F.inicio)->id);
-    printf("%d,",(F.inicio)->entrada);
-    printf("%d) ",(F.inicio)->atendimento);
-    printf("\n");
+    printf("Cliente:%d(PA:%d)\n",(F.inicio)->id,(F.inicio)->atendimento);
   }
 }

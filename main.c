@@ -35,7 +35,7 @@ void main () {
 			clientes[0].entrada = minutos + (1+(rand() % 4));
       clientes[0].atendimento = (1+(rand() % 4));
     }
-			printf("CLIENTE ENTRADA PARA ENTRAR NA FILA:%d(%d,%d)\n", clientes[0].id, clientes[0].entrada, clientes[0].atendimento);
+			printf("CLIENTE PARA CHEGAR NA FILA:%d(%d,%d)\n", clientes[0].id, clientes[0].entrada, clientes[0].atendimento);
     //chegada na fila
     if (clientes[0].entrada == minutos ) {
       inserirFila(&F, clientes[0].id, clientes[0].entrada, clientes[0].atendimento);
