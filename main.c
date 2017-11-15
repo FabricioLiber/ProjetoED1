@@ -28,40 +28,48 @@ void main () {
 
   for (i = 0; i < TEMPO; i++,minutos++) {
 		printf("\e[H\e[2J");
-
+		printf("TEMPO DO PROGRAMA: %d MINUTOS\n",minutos);
     //cria o Cliente
-    if (minutos == 0 || tEntrada == minutos) {
+    if (minutos == 0 || clientes[0].entrada < minutos) {
 			clientes[0].id = ++idCli;
 			clientes[0].entrada = minutos + (1+(rand() % 4));
       clientes[0].atendimento = (1+(rand() % 4));
     }
+			printf("CLIENTE ENTRADA PARA ENTRAR NA FILA:%d(%d,%d)\n", clientes[0].id, clientes[0].entrada, clientes[0].atendimento);
     //chegada na fila
     if (clientes[0].entrada == minutos ) {
       inserirFila(&F, clientes[0].id, clientes[0].entrada, clientes[0].atendimento);
     }
-    imprimirFila (F);
-
-		/*
-
    //atendimento no caixa
-    if (flagCaixa=0) {
-      removerFila(&F,&idCli,&tAtend);
-      clientes[1].id = idCli;
-      clientes[1].atendimento = tAtend;
-      flagCaixa = 1;
+		if (flagCaixa==0 ) {
+			if (!vaziaFila(F)) {
+				removerFila(&F,&idCli,&tAtend);
+      	clientes[1].id = idCli;
+      	clientes[1].atendimento = tAtend;
+				printf ("CAIXA EM ATENDIMENTO: Cliente %d (tempo previsto atendimento %d)\n", clientes[1].id, clientes[1].atendimento);
+      	flagCaixa = 1;
+			}else {
+				printf("CAIXA LIVRE!\n");
+			}
+
 
     //sair do atendimento e caixa vazio
     } else {
+			printf ("CAIXA EM ATENDIMENTO: Cliente %d (tempo previsto atendimento %d)\n", clientes[1].id, clientes[1].atendimento);
       clientes[1].atendimento--;
       if (clientes[1].atendimento==0) {
-        printf("CAIXA VAZIO! PROXIMO CLIENTE!\n");
+        printf("FIM DO ATENDIMENTO! PROXIMO CLIENTE!\n");
         flagCaixa = 0;
       }
     }
-		*/
-
+		imprimirFila (F);
 
     //pausa automatica do programa
-    sleep(1);
+    //sleep(2);
+		//Pausa manual do programa;
+		fflush(stdin);
+		printf("Pressione ENTER \n");
+		getchar();
+
   }
 }
