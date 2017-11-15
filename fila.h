@@ -1,18 +1,21 @@
 typedef int telem;
 
 typedef struct no {
-  telem espera;
+  telem id;
+  telem entrada;
   telem atendimento;
-  struct no prox;
-} tno;
+  struct no* prox;
+} tcliente;
 
-typdef struct tfila {
-  tno* inicio;
-  tno* fim;
-}
+typedef struct tfila {
+  tcliente* inicio;
+  tcliente* fim;
+} tfila;
 
 void criarFila (tfila *F);
 int vaziaFila (tfila F);
-int primeiroFila (tfila F);
-int inserirFila (tfila *F, telem atendimento, telem espera);
-int removerFila (tfila *F, telem atendimento, telem espera);
+int primeiroFila (tfila F, telem *idCli);
+int inserirFila (tfila *F, telem idCli, telem entrada, telem atendimento);
+int removerFila (tfila *F, telem *idCli, telem *atendimento);
+int tamanhoFila (tfila F);
+void imprimirFila (tfila F);
