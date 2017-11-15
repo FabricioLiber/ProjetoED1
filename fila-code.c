@@ -60,16 +60,18 @@ int tamanhoFila (tfila F) {
 
 void imprimirFila (tfila F) {
 
-  while ((F.inicio)->prox != NULL) {
+  if (!vaziaFila(F)) {
+    while ((F.inicio)->prox != NULL) {
+      printf("Cliente:");
+      printf("%d(",(F.inicio)->id);
+      printf("%d,",(F.inicio)->entrada);
+      printf("%d) - ",(F.inicio)->atendimento);
+      F.inicio = (F.inicio)->prox;
+    }
     printf("Cliente:");
     printf("%d(",(F.inicio)->id);
     printf("%d,",(F.inicio)->entrada);
-    printf("%d) - ",(F.inicio)->atendimento);
-    F.inicio = (F.inicio)->prox;
+    printf("%d) ",(F.inicio)->atendimento);
+    printf("\n");
   }
-  printf("Cliente:");
-  printf("%d(",(F.inicio)->id);
-  printf("%d,",(F.inicio)->entrada);
-  printf("%d) ",(F.inicio)->atendimento);
-  printf("\n");
 }

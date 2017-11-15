@@ -16,34 +16,32 @@ void main () {
   printf("\e[H\e[2J");
   criarFila (&F);
   srand(time(NULL));
-  /*inserirFila(&F, 1, 3, 2);
-  inserirFila(&F, 2, 1, 3);
-  inserirFila(&F, 3, 2, 4);
+  //inserirFila(&F, 1, 3, 2);
+  //inserirFila(&F, 2, 1, 3);
+  //inserirFila(&F, 3, 2, 4);
   //inserirFila(&F, 4, 5, 3);
   //removerFila (&F, &idCli);
   //primeiroFila(F,&idCli);
   //printf ("%d\n",idCli);
-  printf("%d\n",tamanhoFila(F));
-  imprimirFila(F);*/
+  //printf("%d\n",tamanhoFila(F));
+  //imprimirFila(F);
 
-  for (i = 0; i < TEMPO; i++) {
-    minutos++;
+  for (i = 0; i < TEMPO; i++,minutos++) {
+		printf("\e[H\e[2J");
 
     //cria o Cliente
     if (minutos == 0 || tEntrada == minutos) {
-      clientes[0].id = idCli++;
-      clientes[0].entrada = minutos + (1+(rand() % 4));
+			clientes[0].id = ++idCli;
+			clientes[0].entrada = minutos + (1+(rand() % 4));
       clientes[0].atendimento = (1+(rand() % 4));
     }
-    printf("id %d(%d,%d)\n", clientes[0].id, clientes[0].entrada, clientes[0].atendimento);
-/*
     //chegada na fila
     if (clientes[0].entrada == minutos ) {
-      inserirFila(&F, idCli, clientes[0].entrada, clientes[0].atendimento);
+      inserirFila(&F, clientes[0].id, clientes[0].entrada, clientes[0].atendimento);
     }
+    imprimirFila (F);
 
-    //imprimirFila (F);
-
+		/*
 
    //atendimento no caixa
     if (flagCaixa=0) {
@@ -60,10 +58,10 @@ void main () {
         flagCaixa = 0;
       }
     }
-
+		*/
 
 
     //pausa automatica do programa
-    sleep(1);*/
+    sleep(1);
   }
 }
