@@ -7,11 +7,11 @@
 #include "fila.h"
 #include "funcoes.h"
 
-void criaCliente (tcliente *clientes, int minutos, telem *idCli) {
-  if (minutos == 0 || (clientes[0].entrada) < minutos) {
+void criaCliente (tcliente *cliente, int minutos, telem *idCli) {
+  if (minutos == 0 || cliente->entrada < minutos) {
     srand( (unsigned)time(NULL) );
-    (clientes[0].id) = ++*idCli;
-    (clientes[0].entrada) = minutos + (1+(rand() % 4));
-    (clientes[0].atendimento) = (1+(rand() % 4));
+    cliente->id = ++*idCli;
+    cliente->entrada = minutos + (1+(rand() % 4));
+    cliente->atendimento = (1+(rand() % 4));
   }
 }

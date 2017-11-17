@@ -10,7 +10,7 @@
 
 void main () {
 	tfila F;
-  tcliente clientes[2];
+  tcliente clienteEntrada, clienteAtendimento;
   telem dado, idCli=0, tEntrada, tAtend;
   int i,minutos=0, flagCaixa=0, aux;
 
@@ -28,27 +28,27 @@ void main () {
   //imprimirFila(F);
 
   for (i = 0; i < TEMPO; i++,minutos++) {
-		printf("\e[H\e[2J");
-		printf("TEMPO DO PROGRAMA: %d MINUTOS\n",minutos);
-    //cria o Cliente
-		criaCliente (clientes,minutos,&idCli);
+    printf("\e[H\e[2J");
+    printf("TEMPO DO PROGRAMA: %d MINUTO%s\n",minutos, minutos == 1 ? "" : "S");
+    ///cria o Cliente
+    criaCliente (&clienteEntrada,minutos,&idCli);
     /*if (minutos == 0 || clientes[0].entrada < minutos) {
 			clientes[0].id = ++idCli;
 			clientes[0].entrada = minutos + (1+(rand() % 4));
       clientes[0].atendimento = (1+(rand() % 4));
     }*/
-			printf("CLIENTE PARA CHEGAR NA FILA:%d(%d,%d)\n", clientes[0].id, clientes[0].entrada, clientes[0].atendimento);
-    //chegada na fila
-    if (clientes[0].entrada == minutos ) {
-      inserirFila(&F, clientes[0].id, clientes[0].entrada, clientes[0].atendimento);
+    printf("CLIENTE: PARA CHEGAR NA FILA:%d(%d,%d)\n", clienteEntrada.id, clienteEntrada.entrada, clienteEntrada.atendimento);
+    ///chegada na fila
+    if (clienteEntrada.entrada == minutos ) {
+      inserirFila(&F, clienteEntrada.id, clienteEntrada.entrada, clienteEntrada.atendimento);
     }
    //atendimento no caixa
 		if (flagCaixa==0 ) {
 			if (!vaziaFila(F)) {
 				removerFila(&F,&idCli,&tAtend);
-      	clientes[1].id = clientes[0].id;
-      	clientes[1].atendimento = clientes[0].atendimento;
-				printf ("CAIXA EM ATENDIMENTO: Cliente %d (tempo previsto atendimento %d)\n", clientes[1].id, clientes[1].atendimento);
+      	clienteAtendimento.id = clienteEntrada.id;
+      	clienteAtendimento.atendimento = clienteEntrada.atendimento;
+				printf ("CAIXA EM ATENDIMENTO: Cliente %d (tempo previsto atendimento %d)\n", clienteAtendimento.id, clienteAtendimento.atendimento);
       	flagCaixa = 1;
 			}else {
 				printf("CAIXA LIVRE!\n");
@@ -57,9 +57,9 @@ void main () {
 
     //sair do atendimento e caixa vazio
     } else {
-			printf ("CAIXA EM ATENDIMENTO: Cliente %d (tempo previsto atendimento %d)\n", clientes[1].id, clientes[1].atendimento);
-      clientes[1].atendimento--;
-      if (clientes[1].atendimento==0) {
+			printf ("CAIXA EM ATENDIMENTO: Cliente %d (tempo previsto atendimento %d)\n", clienteAtendimento.id, clienteAtendimento.atendimento);
+      clienteAtendimento.atendimento--;
+      if (clienteAtendimento.atendimento==0) {
         printf("FIM DO ATENDIMENTO! PROXIMO CLIENTE!\n");
         flagCaixa = 0;
       }

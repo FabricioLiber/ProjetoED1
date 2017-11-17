@@ -1,1 +1,1 @@
-void criaCliente (tcliente *clientes, int minutos, telem *idCli);
+void criaCliente (tcliente *cliente, int minutos, telem *idCli);
