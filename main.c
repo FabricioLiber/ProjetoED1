@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <time.h>
 #include "fila.h"
+#include "funcoes.h"
 #define TEMPO 20
 
 void main () {
@@ -30,11 +31,12 @@ void main () {
 		printf("\e[H\e[2J");
 		printf("TEMPO DO PROGRAMA: %d MINUTOS\n",minutos);
     //cria o Cliente
-    if (minutos == 0 || clientes[0].entrada < minutos) {
+		criaCliente (clientes,minutos,&idCli);
+    /*if (minutos == 0 || clientes[0].entrada < minutos) {
 			clientes[0].id = ++idCli;
 			clientes[0].entrada = minutos + (1+(rand() % 4));
       clientes[0].atendimento = (1+(rand() % 4));
-    }
+    }*/
 			printf("CLIENTE PARA CHEGAR NA FILA:%d(%d,%d)\n", clientes[0].id, clientes[0].entrada, clientes[0].atendimento);
     //chegada na fila
     if (clientes[0].entrada == minutos ) {
