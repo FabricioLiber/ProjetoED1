@@ -44,8 +44,8 @@ void main () {
 		if (flagCaixa==0 ) {
 			if (!vaziaFila(F)) {
 				removerFila(&F,&idCli,&tAtend);
-      	clientes[1].id = idCli;
-      	clientes[1].atendimento = tAtend;
+      	clientes[1].id = clientes[0].id;
+      	clientes[1].atendimento = clientes[0].atendimento;
 				printf ("CAIXA EM ATENDIMENTO: Cliente %d (tempo previsto atendimento %d)\n", clientes[1].id, clientes[1].atendimento);
       	flagCaixa = 1;
 			}else {
