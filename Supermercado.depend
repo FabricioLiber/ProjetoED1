@@ -31,3 +31,37 @@
 	"fila.h"
 	"funcoes.h"
 
+1510955909 source:c:\users\liber\desktop\master\projetosed (ed)\fila-code.c
+	"fila.h"
+	"funcoes.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1510955858 c:\users\liber\desktop\master\projetosed (ed)\fila.h
+
+1510970553 c:\users\liber\desktop\master\projetosed (ed)\funcoes.h
+
+1510970548 source:c:\users\liber\desktop\master\projetosed (ed)\funcoes-code.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<unistd.h>
+	<time.h>
+	<math.h>
+	"fila.h"
+	"funcoes.h"
+
+1510970566 source:c:\users\liber\desktop\master\projetosed (ed)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<unistd.h>
+	<time.h>
+	<math.h>
+	"fila.h"
+	"funcoes.h"
+
