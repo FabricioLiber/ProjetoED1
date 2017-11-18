@@ -64,7 +64,9 @@ void main () {
         flagCaixa = 0;
       }
     }
+        printf("FILA: ");
 		imprimirFila (F);
+		///calcular maior tamanho que a fila teve
 		maiorFila(F, &tamanhoMaximo);
 
     //pausa automatica do programa
