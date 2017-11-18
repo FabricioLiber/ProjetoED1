@@ -29,3 +29,8 @@ void entraCaixa (tfila *F, tcliente *cAtendimento) {
   cAtendimento->id = id;
   cAtendimento->atendimento = tempo;
 }
+
+void maiorFila(tfila F, int *tamanhoMaximo){
+    if (*tamanhoMaximo < tamanhoFila(F))
+        *tamanhoMaximo = tamanhoFila(F);
+}
