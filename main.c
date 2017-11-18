@@ -12,7 +12,7 @@ void main () {
 	tfila F;
   tcliente clienteEntrada, clienteAtendimento;
   telem dado, idCli=0, tEntrada, tAtend;
-  int i,minutos=0, flagCaixa=0, aux;
+  int i,minutos=0, flagCaixa=0, aux, tamanhoMaximo=0;
 
   printf("\e[H\e[2J");
   criarFila (&F);
@@ -65,6 +65,7 @@ void main () {
       }
     }
 		imprimirFila (F);
+		maiorFila(F, &tamanhoMaximo);
 
     //pausa automatica do programa
     //sleep(2);
@@ -74,4 +75,5 @@ void main () {
 		getchar();
 
   }
+    printf("Tamanho maximo da fila: %d clientes", tamanhoMaximo);
 }

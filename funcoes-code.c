@@ -12,6 +12,10 @@ void criaCliente (tcliente *cliente, int minutos, telem *idCli) {
     srand( (unsigned)time(NULL) );
     cliente->id = ++*idCli;
     cliente->entrada = minutos + (1+(rand() % 4));
-    cliente->atendimento = (1+(rand() % 4));
+    cliente->atendimento = (1+(rand() % 10));
   }
+}
+void maiorFila(tfila F, int *tamanhoMaximo){
+    if (*tamanhoMaximo < tamanhoFila(F))
+        *tamanhoMaximo = tamanhoFila(F);
 }
