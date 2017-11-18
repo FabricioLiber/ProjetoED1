@@ -61,6 +61,7 @@ int tamanhoFila (tfila F) {
 
 void imprimirFila (tfila F) {
 
+  printf("FILA =>");
   if (!vaziaFila(F)) {
     while ((F.inicio)->prox != NULL) {
       printf("Cliente:%d(PA:%d) - ",(F.inicio)->id,(F.inicio)->atendimento);
