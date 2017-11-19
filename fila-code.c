@@ -35,11 +35,12 @@ int inserirFila (tfila *F, telem idCli, telem entrada, telem atendimento) {
   return 1;
 }
 
-int removerFila (tfila *F, telem *idCli, telem *tAtend) {
+int removerFila (tfila *F, telem *idCli, telem *tAtend, telem *tEntrada) {
   tcliente *aux;
   if (vaziaFila(*F)) return 0; /* Erro: fila vazia */
   primeiroFila(*F,idCli);
   *tAtend = (F->inicio)->atendimento;
+  *tEntrada = (F->inicio)->entrada;
   if (F->inicio == F->fim)
     F->fim = NULL;
   aux = F->inicio;

@@ -31,8 +31,8 @@
 	"fila.h"
 	"funcoes.h"
 
-<<<<<<< HEAD
-=======
+1510956967 D
+
 1510959987 source:c:\users\kamila porto\documents\si\p2\estrutura de dados\projeto i\projetosed\fila-code.c
 	"fila.h"
 	"funcoes.h"
@@ -65,4 +65,37 @@
 	"fila.h"
 	"funcoes.h"
 
->>>>>>> monitora
+1510965272 itora
+
+1511096817 source:c:\users\liber\desktop\master\projetosed (ed)\fila-code.c
+	"fila.h"
+	"funcoes.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1511096856 c:\users\liber\desktop\master\projetosed (ed)\fila.h
+
+1511097525 c:\users\liber\desktop\master\projetosed (ed)\funcoes.h
+
+1511097691 source:c:\users\liber\desktop\master\projetosed (ed)\funcoes-code.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<unistd.h>
+	<time.h>
+	"fila.h"
+	"funcoes.h"
+
+1511097640 source:c:\users\liber\desktop\master\projetosed (ed)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<unistd.h>
+	<time.h>
+	"fila.h"
+	"funcoes.h"
+

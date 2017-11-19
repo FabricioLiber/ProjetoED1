@@ -23,14 +23,26 @@ void entraFila (tfila *F, tcliente *cliente, int minutos) {
 }
 
 void entraCaixa (tfila *F, tcliente *cAtendimento) {
-  int id, tempo;
+  int id, tAtend, tEntrada;
 
-  removerFila(F,&id,&tempo);
+  removerFila(F,&id,&tAtend, &tEntrada);
   cAtendimento->id = id;
-  cAtendimento->atendimento = tempo;
+  cAtendimento->atendimento = tAtend;
+  cAtendimento->entrada = tEntrada;
 }
 
 void maiorFila(tfila F, int *tamanhoMaximo){
     if (*tamanhoMaximo < tamanhoFila(F))
         *tamanhoMaximo = tamanhoFila(F);
+}
+
+int tempoMaximoEspera (int clienteAtendimento, int clienteMaximoEspera) {
+    if (clienteAtendimento > clienteMaximoEspera)
+        return 1;
+    return 0;
+}
+
+void atualizaHora (int minutos) {
+    printf("TEMPO DO PROGRAMA - %s%d:%s%d h\n\n", abs(minutos / 60) < 10 ? "0" : "",
+            abs(minutos / 60), (minutos % 60) < 10 ? "0" : "", minutos % 60);
 }

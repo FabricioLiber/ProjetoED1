@@ -10,9 +10,9 @@
 
 void main () {
 	tfila F;
-  tcliente clienteEntrada, clienteAtendimento;
+  tcliente clienteEntrada, clienteAtendimento, clienteMaiorEspera;
   telem dado, idCli=0, tEntrada, tAtend;
-  int i,minutos=0, flagCaixa=0, aux, tamanhoMaximo=0;
+  int i,minutos=0, flagCaixa=0, aux, tamanhoMaximo = 0, esperaMaximo = 0;
 
   printf("\e[H\e[2J");
   criarFila (&F);
@@ -20,7 +20,7 @@ void main () {
 
   for (i = 0; i < TEMPO; i++,minutos++) {
     printf("\e[H\e[2J");
-    printf("TEMPO DO PROGRAMA: %d MINUTO%s\n",minutos, minutos == 1 ? "" : "S");
+    atualizaHora (minutos);
 
     ///cria o Cliente
     criaCliente (&clienteEntrada,minutos,&idCli);
@@ -33,6 +33,10 @@ void main () {
 		if (flagCaixa==0 ) {
 			if (!vaziaFila(F)) {
 				entraCaixa (&F,&clienteAtendimento);
+				if (tempoMaximoEspera(minutos - clienteAtendimento.entrada, esperaMaximo)) {
+                    clienteMaiorEspera = clienteAtendimento;
+                    esperaMaximo = minutos - clienteAtendimento.entrada;
+				}
 				printf ("CAIXA EM ATENDIMENTO: Cliente %d (tempo previsto atendimento %d)\n", clienteAtendimento.id, clienteAtendimento.atendimento);
       	flagCaixa = 1;
 			}else {
@@ -61,4 +65,6 @@ void main () {
 
   }
     printf("Tamanho maximo da fila: %d clientes\n", tamanhoMaximo);
+    printf("Cliente %d (%d, %d), Maior espera %d minutos", clienteMaiorEspera.id,
+            clienteMaiorEspera.entrada, clienteMaiorEspera.atendimento, esperaMaximo);
 }
