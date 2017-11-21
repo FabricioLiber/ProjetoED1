@@ -13,19 +13,17 @@ int vaziaFila (tfila F) {
   return (F.inicio == NULL && F.fim == NULL);
 }
 
-int primeiroFila (tfila F, telem *idCli) {
+int primeiroFila (tfila F, scliente *C) {
   if (vaziaFila(F)) return 0; /* erro: fila vazia */
-  *idCli = (F.inicio)->id;
+  *C = (F.inicio)->cliente;
   return 1;
 }
 
-int inserirFila (tfila *F, telem idCli, telem entrada, telem atendimento) {
-  tcliente *novo;
-  novo = (tcliente*) malloc(sizeof(tcliente));
+int inserirFila (tfila *F, scliente C) {
+  tno *novo;
+  novo = (tno*) malloc(sizeof(tno));
   if (novo == NULL) return 0; /* Erro: mem¢ria insuficiente */
-  novo->id = idCli;
-  novo->entrada = entrada;
-  novo->atendimento = atendimento;
+  novo->cliente = C;
   novo->prox = NULL;
   if (vaziaFila(*F))
     F->inicio = novo;
@@ -35,12 +33,10 @@ int inserirFila (tfila *F, telem idCli, telem entrada, telem atendimento) {
   return 1;
 }
 
-int removerFila (tfila *F, telem *idCli, telem *tAtend, telem *tEntrada) {
-  tcliente *aux;
+int removerFila (tfila *F, scliente *C) {
+  tno *aux;
   if (vaziaFila(*F)) return 0; /* Erro: fila vazia */
-  primeiroFila(*F,idCli);
-  *tAtend = (F->inicio)->atendimento;
-  *tEntrada = (F->inicio)->entrada;
+  primeiroFila(*F,C);
   if (F->inicio == F->fim)
     F->fim = NULL;
   aux = F->inicio;
@@ -65,9 +61,9 @@ void imprimirFila (tfila F) {
   printf("FILA =>");
   if (!vaziaFila(F)) {
     while ((F.inicio)->prox != NULL) {
-      printf("Cliente:%d(PA:%d) - ",(F.inicio)->id,(F.inicio)->atendimento);
+      printf("Cliente:%d(TC:%d,PA:%d) - ",(F.inicio)->cliente.id,(F.inicio)->cliente.entrada,(F.inicio)->cliente.atendimento);
       F.inicio = (F.inicio)->prox;
     }
-    printf("Cliente:%d(PA:%d)\n",(F.inicio)->id,(F.inicio)->atendimento);
+    printf("Cliente:%d(TC:%d,PA:%d)\n",(F.inicio)->cliente.id,(F.inicio)->cliente.entrada,(F.inicio)->cliente.atendimento);
   }
 }

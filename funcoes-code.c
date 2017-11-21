@@ -6,29 +6,32 @@
 #include <time.h>
 #include "fila.h"
 #include "funcoes.h"
+#define ENTRADA 4
+#define ATENDIMENTO 10
 
-void criaCliente (tcliente *cliente, int minutos, telem *idCli) {
-  if (minutos == 0 || cliente->entrada < minutos) {
-    srand( (unsigned)time(NULL) );
-    cliente->id = ++*idCli;
-    cliente->entrada = minutos + (1+(rand() % 4));
-    cliente->atendimento = (1+(rand() % 10));
+void criaCliente (scliente *C, int minutos) {
+  //srand( (unsigned)time(NULL) );
+  if (minutos == 0) {
+    C->id = 1;
+    C->entrada = minutos + (1+(rand() % ENTRADA));
+    C->atendimento = (1+(rand() % ATENDIMENTO));
+  }
+  if (C->entrada < minutos) {
+    C->id ++;
+    C->entrada = minutos + (1+(rand() % 4));
+    C->atendimento = (1+(rand() % 10));
   }
 }
 
-void entraFila (tfila *F, tcliente *cliente, int minutos) {
-  if (cliente->entrada == minutos ) {
-    inserirFila(F, cliente->id, cliente->entrada, cliente->atendimento);
+void entraFila (tfila *F, scliente *C, int minutos) {
+  if (C->entrada == minutos ) {
+    inserirFila(F,*C);
   }
 }
 
-void entraCaixa (tfila *F, tcliente *cAtendimento) {
-  int id, tAtend, tEntrada;
+void entraCaixa (tfila *F, scliente *C) {
 
-  removerFila(F,&id,&tAtend, &tEntrada);
-  cAtendimento->id = id;
-  cAtendimento->atendimento = tAtend;
-  cAtendimento->entrada = tEntrada;
+  removerFila(F,C);
 }
 
 void maiorFila(tfila F, int *tamanhoMaximo){
@@ -36,10 +39,11 @@ void maiorFila(tfila F, int *tamanhoMaximo){
         *tamanhoMaximo = tamanhoFila(F);
 }
 
-int tempoMaximoEspera (int clienteAtendimento, int clienteMaximoEspera) {
-    if (clienteAtendimento > clienteMaximoEspera)
-        return 1;
-    return 0;
+void tempoMaximoEspera (scliente clienteAtendimento, scliente *clienteMaximoEspera, int *esperaMaximo, int minutos) {
+  if (minutos-clienteAtendimento.entrada > *esperaMaximo) {
+      *clienteMaximoEspera = clienteAtendimento;
+      *esperaMaximo = (minutos-clienteAtendimento.entrada);
+  }
 }
 
 void atualizaHora (int minutos) {

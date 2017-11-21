@@ -1,21 +1,28 @@
-typedef int telem;
+//#include "funcoes.h"
+
+//typedef struct telem;
+
+typedef struct scliente {
+  int id;
+  int entrada;
+  int atendimento;
+} scliente;
+
 
 typedef struct no {
-  telem id;
-  telem entrada;
-  telem atendimento;
+  scliente cliente;
   struct no* prox;
-} tcliente;
+} tno;
 
 typedef struct tfila {
-  tcliente* inicio;
-  tcliente* fim;
+  tno* inicio;
+  tno* fim;
 } tfila;
 
 void criarFila (tfila *F);
 int vaziaFila (tfila F);
-int primeiroFila (tfila F, telem *idCli);
-int inserirFila (tfila *F, telem idCli, telem entrada, telem atendimento);
-int removerFila (tfila *F, telem *idCli, telem *atendimento, telem *tEntrada);
+int primeiroFila (tfila F, scliente *C);
+int inserirFila (tfila *F, scliente C);
+int removerFila (tfila *F, scliente *C);
 int tamanhoFila (tfila F);
 void imprimirFila (tfila F);
