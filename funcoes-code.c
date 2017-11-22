@@ -6,8 +6,8 @@
 #include <time.h>
 #include "fila.h"
 #include "funcoes.h"
-#define ENTRADA 4
-#define ATENDIMENTO 10
+#define ENTRADA 5
+#define ATENDIMENTO 5
 
 void criaCliente (scliente *C, int minutos) {
   //srand( (unsigned)time(NULL) );
@@ -18,8 +18,8 @@ void criaCliente (scliente *C, int minutos) {
   }
   if (C->entrada < minutos) {
     C->id ++;
-    C->entrada = minutos + (1+(rand() % 4));
-    C->atendimento = (1+(rand() % 10));
+    C->entrada = minutos + (1+(rand() % ENTRADA));
+    C->atendimento = (1+(rand() % ATENDIMENTO));
   }
 }
 

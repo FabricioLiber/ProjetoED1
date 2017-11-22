@@ -1,13 +1,10 @@
-//#include "funcoes.h"
-
-//typedef struct telem;
-
-typedef struct scliente {
+typedef struct {
   int id;
   int entrada;
   int atendimento;
 } scliente;
 
+typedef scliente telem;
 
 typedef struct no {
   scliente cliente;

@@ -53,14 +53,18 @@ void main () {
 		maiorFila(F, &tamanhoMaximo);
 
     //pausa automatica do programa
-    sleep(1);
+    //sleep(1);
 		//Pausa manual do programa;
-		//fflush(stdin);
-		//printf("\nPressione ENTER \n");
-		//getchar();
+		fflush(stdin);
+		printf("\nPressione ENTER \n");
+		getchar();
 
   }
     printf("Tamanho maximo da fila: %d clientes\n", tamanhoMaximo);
-    printf("Cliente %d (%d, %d), Maior espera %d minutos\n", clienteMaximoEspera.id,
+		if (esperaMaximo != 0) {
+			printf("Cliente %d (%d, %d), Maior espera %d minutos\n", clienteMaximoEspera.id,
             clienteMaximoEspera.entrada, clienteMaximoEspera.atendimento, esperaMaximo);
+		} else {
+			printf("Não houve espera por parte dos clientes!!\n");
+		}
 }
