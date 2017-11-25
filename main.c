@@ -18,7 +18,7 @@ void main () {
     system("cls");
 
     criarFila (&F);
-	srand(time(NULL));
+    srand(time(NULL));
 
     for (i = 0; i < TEMPO; i ++, minutos ++) {
         system("cls");
@@ -28,7 +28,7 @@ void main () {
         criaCliente(&clienteEntrada, minutos);
 
         ///entrada na fila
-		if (!entraFila(&F, &clienteEntrada, minutos))
+        if (!entraFila(&F, &clienteEntrada, minutos))
             printf("Erro ao adicionar a fila!\n");
 
         ///atendimento no caixa
@@ -61,7 +61,7 @@ void main () {
 
         ///pausa automatica do programa
         ///sleep(1);
-		///Pausa manual do programa;
+		///Pausa manual do programa
 		fflush(stdin);
 		printf("\nPressione ENTER \n");
 		getchar();
@@ -71,9 +71,9 @@ void main () {
 
     /// Apresentação do cliente com a maior espera
     if (esperaMaximo) {
-		printf("Cliente %d (%d, %d), Maior espera %d minutos\n", clienteMaximoEspera.id,
+        printf("Cliente %d (%d, %d), Maior espera %d minutos\n", clienteMaximoEspera.id,
         clienteMaximoEspera.entrada, clienteMaximoEspera.atendimento, esperaMaximo);
-	} else {
-		printf("Nao houve espera por parte dos clientes!!\n");
-	}
+    } else {
+	    printf("Nao houve espera por parte dos clientes!!\n");
+    }
 }
