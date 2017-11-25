@@ -32,10 +32,10 @@ void main () {
             printf("Erro ao adicionar a fila!\n");
 
         ///atendimento no caixa
-		if (flagCaixa == 0) {
-			if (entraCaixa (&F, &clienteAtendimento, &flagCaixa)) {
-				tempoMaximoEspera(clienteAtendimento, &clienteMaximoEspera, &esperaMaximo, minutos);
-				printf ("CAIXA EM ATENDIMENTO: Cliente %d (tempo previsto atendimento %d)\n",
+        if (flagCaixa == 0) {
+            if (entraCaixa (&F, &clienteAtendimento, &flagCaixa)) {
+                tempoMaximoEspera(clienteAtendimento, &clienteMaximoEspera, &esperaMaximo, minutos);
+                printf ("CAIXA EM ATENDIMENTO: Cliente %d (tempo previsto atendimento %d)\n",
                         clienteAtendimento.id, clienteAtendimento.atendimento);
 			}else {
 				printf("CAIXA LIVRE!\n");
@@ -53,18 +53,16 @@ void main () {
         }
         printf("FILA: ");
 
-		///Imprime  a fila com os clientes na espera
-		imprimirFila (F);
-
-		///Calcula maior tamanho que a fila teve
-		maiorFila(F, &tamanhoMaximo);
-
+        ///Imprime  a fila com os clientes na espera
+        imprimirFila (F);
+        ///Calcula maior tamanho que a fila teve
+        maiorFila(F, &tamanhoMaximo);
         ///pausa automatica do programa
         ///sleep(1);
-		///Pausa manual do programa
-		fflush(stdin);
-		printf("\nPressione ENTER \n");
-		getchar();
+        ///Pausa manual do programa
+        fflush(stdin);
+        printf("\nPressione ENTER \n");
+        getchar();
     }
     /// Apresentação do maior tamanho da fila
     printf("Tamanho maximo da fila: %d clientes\n", tamanhoMaximo);
