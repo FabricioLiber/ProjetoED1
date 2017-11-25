@@ -31,9 +31,13 @@
 	"fila.h"
 	"funcoes.h"
 
+<<<<<<< HEAD
 1510956967 D
 
 1510959987 source:c:\users\kamila porto\documents\si\p2\estrutura de dados\projeto i\projetosed\fila-code.c
+=======
+1510955909 source:c:\users\liber\desktop\master\projetosed (ed)\fila-code.c
+>>>>>>> f488b5792ac24881bb0709744df3de4178276cbf
 	"fila.h"
 	"funcoes.h"
 	<stdio.h>
@@ -41,27 +45,44 @@
 	<string.h>
 	<ctype.h>
 
+<<<<<<< HEAD
 1510880890 c:\users\kamila porto\documents\si\p2\estrutura de dados\projeto i\projetosed\fila.h
 
 1510963007 c:\users\kamila porto\documents\si\p2\estrutura de dados\projeto i\projetosed\funcoes.h
 
 1510963051 source:c:\users\kamila porto\documents\si\p2\estrutura de dados\projeto i\projetosed\funcoes-code.c
+=======
+1510955858 c:\users\liber\desktop\master\projetosed (ed)\fila.h
+
+1510970553 c:\users\liber\desktop\master\projetosed (ed)\funcoes.h
+
+1510970548 source:c:\users\liber\desktop\master\projetosed (ed)\funcoes-code.c
+>>>>>>> f488b5792ac24881bb0709744df3de4178276cbf
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	<string.h>
 	<unistd.h>
 	<time.h>
+<<<<<<< HEAD
 	"fila.h"
 	"funcoes.h"
 
 1510965272 source:c:\users\kamila porto\documents\si\p2\estrutura de dados\projeto i\projetosed\main.c
+=======
+	<math.h>
+	"fila.h"
+	"funcoes.h"
+
+1510970566 source:c:\users\liber\desktop\master\projetosed (ed)\main.c
+>>>>>>> f488b5792ac24881bb0709744df3de4178276cbf
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	<string.h>
 	<unistd.h>
 	<time.h>
+<<<<<<< HEAD
 	"fila.h"
 	"funcoes.h"
 
@@ -88,6 +109,9 @@
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
+=======
+	<math.h>
+>>>>>>> f488b5792ac24881bb0709744df3de4178276cbf
 	"fila.h"
 	"funcoes.h"
 

@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+<<<<<<< HEAD
+=======
+#include <math.h>
+>>>>>>> f488b5792ac24881bb0709744df3de4178276cbf
 #include "fila.h"
 #include "funcoes.h"
 
@@ -42,7 +46,10 @@ void tempoMaximoEspera (scliente clienteAtendimento, scliente *clienteMaximoEspe
   }
 }
 
+<<<<<<< HEAD
 void atualizaHora (int minutos) {
     printf("TEMPO DO PROGRAMA - %s%d:%s%d h\n\n", abs(minutos / 60) < 10 ? "0" : "",
             abs(minutos / 60), (minutos % 60) < 10 ? "0" : "", minutos % 60);
+=======
+>>>>>>> f488b5792ac24881bb0709744df3de4178276cbf
 }

@@ -6,11 +6,15 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
+<<<<<<< HEAD
+=======
+>>>>>>> f488b5792ac24881bb0709744df3de4178276cbf
 #include "fila.h"
 #include "funcoes.h"
-#define TEMPO 20
+#define TEMPO 65
 
 void main () {
+<<<<<<< HEAD
     /// Criação da fila
     tfila F;
 
@@ -82,4 +86,6 @@ void main () {
 	} else {
 		printf("Nao houve espera por parte dos clientes!!\n");
 	}
+=======
+>>>>>>> f488b5792ac24881bb0709744df3de4178276cbf
 }
