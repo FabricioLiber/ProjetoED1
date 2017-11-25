@@ -6,7 +6,6 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include "fila.h"
 #include "funcoes.h"
 #define TEMPO 20
@@ -21,8 +20,9 @@ void main () {
     /// Variáveis auxiliares
     int i,minutos = 0, flagCaixa = 0, tamanhoMaximo = 0, esperaMaximo = 0;
 
-    ///
+    /// Limpa a tela
     system("cls");
+
     criarFila (&F);
 	srand(time(NULL));
 
