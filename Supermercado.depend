@@ -67,34 +67,26 @@
 
 1510965272 itora
 
-1511096817 source:c:\users\liber\desktop\master\projetosed (ed)\fila-code.c
+1511637805 source:c:\users\liber\desktop\master\projetosed (ed)\fila-code.c
 	"fila.h"
 	"funcoes.h"
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
-	<ctype.h>
 
-1511096856 c:\users\liber\desktop\master\projetosed (ed)\fila.h
+1511636642 c:\users\liber\desktop\master\projetosed (ed)\fila.h
 
-1511097525 c:\users\liber\desktop\master\projetosed (ed)\funcoes.h
+1511638309 c:\users\liber\desktop\master\projetosed (ed)\funcoes.h
 
-1511097691 source:c:\users\liber\desktop\master\projetosed (ed)\funcoes-code.c
+1511639182 source:c:\users\liber\desktop\master\projetosed (ed)\funcoes-code.c
 	<stdio.h>
 	<stdlib.h>
-	<ctype.h>
-	<string.h>
-	<unistd.h>
 	<time.h>
 	"fila.h"
 	"funcoes.h"
 
-1511097640 source:c:\users\liber\desktop\master\projetosed (ed)\main.c
+1511639828 source:c:\users\liber\desktop\master\projetosed (ed)\main.c
 	<stdio.h>
 	<stdlib.h>
-	<ctype.h>
-	<string.h>
-	<unistd.h>
 	<time.h>
 	"fila.h"
 	"funcoes.h"

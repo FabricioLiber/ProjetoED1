@@ -1,37 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include <string.h>
-#include <unistd.h>
-#include <time.h>
 #include "fila.h"
 #include "funcoes.h"
+
 #define ENTRADA 5
 #define ATENDIMENTO 5
 
 void criaCliente (scliente *C, int minutos) {
   //srand( (unsigned)time(NULL) );
-  if (minutos == 0) {
+  if (minutos == 0)
     C->id = 1;
-    C->entrada = minutos + (1+(rand() % ENTRADA));
-    C->atendimento = (1+(rand() % ATENDIMENTO));
-  }
-  if (C->entrada < minutos) {
+  else if (C->entrada < minutos)
     C->id ++;
-    C->entrada = minutos + (1+(rand() % ENTRADA));
-    C->atendimento = (1+(rand() % ATENDIMENTO));
-  }
+
+  C->entrada = minutos + (1+(rand() % ENTRADA));
+  C->atendimento = (1+(rand() % ATENDIMENTO));
 }
 
-void entraFila (tfila *F, scliente *C, int minutos) {
-  if (C->entrada == minutos ) {
-    inserirFila(F,*C);
-  }
+int entraFila (tfila *F, scliente *C, int minutos) {
+  if (C->entrada == minutos)
+    return inserirFila(F,*C);
 }
 
-void entraCaixa (tfila *F, scliente *C) {
-
-  removerFila(F,C);
+int entraCaixa (tfila *F, scliente *C, int *flagCaixa) {
+    if (removerFila(F,C)) {
+        *flagCaixa = 1;
+        return 1;
+    }
+    return 0;
 }
 
 void maiorFila(tfila F, int *tamanhoMaximo){
