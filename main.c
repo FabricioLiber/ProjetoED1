@@ -37,9 +37,9 @@ void main () {
                 tempoMaximoEspera(clienteAtendimento, &clienteMaximoEspera, &esperaMaximo, minutos);
                 printf ("CAIXA EM ATENDIMENTO: Cliente %d (tempo previsto atendimento %d)\n",
                         clienteAtendimento.id, clienteAtendimento.atendimento);
-			}else {
-				printf("CAIXA LIVRE!\n");
-			}
+            }else {
+                printf("CAIXA LIVRE!\n");
+            }
         ///sair do atendimento e caixa vazio
         } else {
             clienteAtendimento.atendimento--;
