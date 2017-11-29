@@ -3,7 +3,7 @@
 #include <time.h>
 #include "fila.h"
 #include "funcoes.h"
-#define TEMPO 20
+#define TEMPO 720
 
 int main () {
     /// Criação da fila
