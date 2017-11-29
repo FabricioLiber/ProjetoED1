@@ -43,6 +43,6 @@ void tempoMaximoEspera (scliente clienteAtendimento, scliente *clienteMaximoEspe
     }
 }
 void atualizaHora (int minutos) {
-    printf("TEMPO DO PROGRAMA - %s%d:%s%d h\n\n", abs(minutos / 60) < 10 ? "0" : "",
-           abs(minutos / 60), (minutos % 60) < 10 ? "0" : "", minutos % 60);
+    printf("TEMPO DO PROGRAMA - %s%d:%s%d h - %d MINUTOS \n\n ", abs(minutos / 60) < 10 ? "0" : "",
+           abs(minutos / 60), (minutos % 60) < 10 ? "0" : "", minutos % 60, minutos);
 }
