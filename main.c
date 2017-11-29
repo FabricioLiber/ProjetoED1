@@ -1,3 +1,11 @@
+/*
+Contribuidores:
+
+    Fabrício Liberato
+    Kamila Porto
+    Rafael Lins
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
