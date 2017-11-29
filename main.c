@@ -52,8 +52,6 @@ int main () {
                     clienteAtendimento.id, clienteAtendimento.atendimento);
             }
         }
-        printf("FILA: ");
-
         ///Imprime  a fila com os clientes na espera
         imprimirFila (F);
         ///Calcula maior tamanho que a fila teve
