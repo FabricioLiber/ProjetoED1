@@ -39,7 +39,7 @@
 
 1510959987 source:c:\users\kamila porto\documents\si\p2\estrutura de dados\projeto i\projetosed\fila-code.c
 
-1511921683 source:c:\users\liber\desktop\master\projetosed (ed)\fila-code.c
+1511924390 source:c:\users\liber\desktop\master\projetosed (ed)\fila-code.c
 	"fila.h"
 	"funcoes.h"
 	<stdio.h>
@@ -73,14 +73,15 @@
 
 1510963051 source:c:\users\kamila porto\documents\si\p2\estrutura de dados\projeto i\projetosed\funcoes-code.c
 
-1511921723 c:\users\liber\desktop\master\projetosed (ed)\fila.h
+1511924390 c:\users\liber\desktop\master\projetosed (ed)\fila.h
 
-1511921350 c:\users\liber\desktop\master\projetosed (ed)\funcoes.h
+1511924442 c:\users\liber\desktop\master\projetosed (ed)\funcoes.h
 
-1511921164 source:c:\users\liber\desktop\master\projetosed (ed)\funcoes-code.c
+1511925014 source:c:\users\liber\desktop\master\projetosed (ed)\funcoes-code.c
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
+	<time.h>
 	"fila.h"
 	"funcoes.h"
 
@@ -89,9 +90,10 @@
 	"fila.h"
 	"funcoes.h"
 
-1511921164 source:c:\users\liber\desktop\master\projetosed (ed)\main.c
+1511924923 source:c:\users\liber\desktop\master\projetosed (ed)\main.c
 	<stdio.h>
 	<stdlib.h>
+	<time.h>
 	"fila.h"
 	"funcoes.h"
 

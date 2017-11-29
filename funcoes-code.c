@@ -9,12 +9,16 @@
 #define ATENDIMENTO 5
 
 void criaCliente (scliente *C, int minutos) {
-    if (minutos == 0)
+    if (minutos == 0) {
         C->id = 1;
-    else if (C->entrada < minutos)
+        C->entrada = minutos + (1+(rand() % ENTRADA));
+        C->atendimento = (1+(rand() % ATENDIMENTO));
+    } else if (C->entrada < minutos) {
         C->id ++;
-    C->entrada = minutos + (1+(rand() % ENTRADA));
-    C->atendimento = (1+(rand() % ATENDIMENTO));
+        C->entrada = minutos + (1+(rand() % ENTRADA));
+        C->atendimento = (1+(rand() % ATENDIMENTO));
+    }
+
 }
 
 void entraFila (tfila *F, scliente *C, int minutos) {
@@ -22,12 +26,8 @@ void entraFila (tfila *F, scliente *C, int minutos) {
         inserirFila(F,*C);
 }
 
-int entraCaixa (tfila *F, scliente *C, int *flagCaixa) {
-    if (removerFila(F,C)) {
-        *flagCaixa = 1;
-        return 1;
-    }
-    return 0;
+void entraCaixa (tfila *F, scliente *C) {
+    removerFila(F,C);
 }
 
 void maiorFila(tfila F, int *tamanhoMaximo){

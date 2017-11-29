@@ -3,9 +3,9 @@
 #include <time.h>
 #include "fila.h"
 #include "funcoes.h"
-#define TEMPO 720
+#define TEMPO 20
 
-void main () {
+int main () {
     /// Criação da fila
     tfila F;
 
@@ -27,13 +27,17 @@ void main () {
 
         ///cria o Cliente
         criaCliente(&clienteEntrada, minutos);
-
+        printf ("CAIXA EM entrada: Cliente %d (tempo previsto entrada %d, atend %d)\n",
+                        clienteEntrada.id, clienteEntrada.entrada, clienteEntrada.atendimento);
         ///entrada na fila
         entraFila(&F, &clienteEntrada, minutos);
 
+        printf("TAM FILA %d\n\n", tamanhoFila(F));
+
         ///atendimento no caixa
         if (flagCaixa == 0) {
-            if (entraCaixa (&F, &clienteAtendimento, &flagCaixa)) {
+            if (!vaziaFila(F)) {
+                entraCaixa (&F, &clienteAtendimento);
                 tempoMaximoEspera(clienteAtendimento, &clienteMaximoEspera, &esperaMaximo, minutos);
                 printf ("CAIXA EM ATENDIMENTO: Cliente %d (tempo previsto atendimento %d)\n",
                         clienteAtendimento.id, clienteAtendimento.atendimento);
@@ -74,4 +78,5 @@ void main () {
     } else {
         printf("Nao houve espera por parte dos clientes!!\n");
     }
+    return 0;
 }
