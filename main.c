@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "fila.h"
 #include "funcoes.h"
-#define TEMPO 65
+#define TEMPO 720
 
 void main () {
     /// Criação da fila
@@ -28,8 +29,7 @@ void main () {
         criaCliente(&clienteEntrada, minutos);
 
         ///entrada na fila
-        if (!entraFila(&F, &clienteEntrada, minutos))
-            printf("Erro ao adicionar a fila!\n");
+        entraFila(&F, &clienteEntrada, minutos);
 
         ///atendimento no caixa
         if (flagCaixa == 0) {
@@ -70,8 +70,8 @@ void main () {
     /// Apresentação do cliente com a maior espera
     if (esperaMaximo) {
         printf("Cliente %d (%d, %d), Maior espera %d minutos\n", clienteMaximoEspera.id,
-        clienteMaximoEspera.entrada, clienteMaximoEspera.atendimento, esperaMaximo);
+               clienteMaximoEspera.entrada, clienteMaximoEspera.atendimento, esperaMaximo);
     } else {
-	    printf("Nao houve espera por parte dos clientes!!\n");
+        printf("Nao houve espera por parte dos clientes!!\n");
     }
 }

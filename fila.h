@@ -1,19 +1,19 @@
 typedef struct {
-  int id;
-  int entrada;
-  int atendimento;
+    int id;
+    int entrada;
+    int atendimento;
 } scliente;
 
 typedef scliente telem;
 
 typedef struct no {
-  scliente cliente;
-  struct no* prox;
+    scliente cliente;
+    struct no* prox;
 } tno;
 
 typedef struct tfila {
-  tno* inicio;
-  tno* fim;
+    tno* inicio;
+    tno* fim;
 } tfila;
 
 void criarFila (tfila *F);
