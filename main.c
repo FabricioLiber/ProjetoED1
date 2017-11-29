@@ -3,7 +3,7 @@
 #include <time.h>
 #include "fila.h"
 #include "funcoes.h"
-#define TEMPO 20
+#define TEMPO 720
 
 int main () {
     /// Criação da fila
@@ -27,17 +27,14 @@ int main () {
 
         ///cria o Cliente
         criaCliente(&clienteEntrada, minutos);
-        printf ("CAIXA EM entrada: Cliente %d (tempo previsto entrada %d, atend %d)\n",
-                        clienteEntrada.id, clienteEntrada.entrada, clienteEntrada.atendimento);
         ///entrada na fila
         entraFila(&F, &clienteEntrada, minutos);
-
-        printf("TAM FILA %d\n\n", tamanhoFila(F));
 
         ///atendimento no caixa
         if (flagCaixa == 0) {
             if (!vaziaFila(F)) {
                 entraCaixa (&F, &clienteAtendimento);
+                flagCaixa = 1;
                 tempoMaximoEspera(clienteAtendimento, &clienteMaximoEspera, &esperaMaximo, minutos);
                 printf ("CAIXA EM ATENDIMENTO: Cliente %d (tempo previsto atendimento %d)\n",
                         clienteAtendimento.id, clienteAtendimento.atendimento);

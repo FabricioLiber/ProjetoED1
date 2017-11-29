@@ -13,7 +13,8 @@ void criaCliente (scliente *C, int minutos) {
         C->id = 1;
         C->entrada = minutos + (1+(rand() % ENTRADA));
         C->atendimento = (1+(rand() % ATENDIMENTO));
-    } else if (C->entrada < minutos) {
+    }
+    if (C->entrada < minutos) {
         C->id ++;
         C->entrada = minutos + (1+(rand() % ENTRADA));
         C->atendimento = (1+(rand() % ATENDIMENTO));
